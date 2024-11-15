@@ -1,5 +1,5 @@
 {
-  "name": "postmate",
+  "name": "@codeages/postmate",
   "version": "1.6.0",
   "description": "A powerful, simple, promise-based postMessage library",
   "main": "build/postmate.js",
