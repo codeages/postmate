@@ -303,12 +303,19 @@
           url = _ref2.url,
           name = _ref2.name,
           _ref2$classListArray = _ref2.classListArray,
-          classListArray = _ref2$classListArray === void 0 ? [] : _ref2$classListArray;
+          classListArray = _ref2$classListArray === void 0 ? [] : _ref2$classListArray,
+          frame = _ref2.frame;
       // eslint-disable-line no-undef
       this.parent = window;
-      this.frame = document.createElement('iframe');
-      this.frame.name = name || '';
-      this.frame.classList.add.apply(this.frame.classList, classListArray);
+
+      if (frame) {
+        this.frame = frame;
+      } else {
+        this.frame = document.createElement('iframe');
+        this.frame.name = name || '';
+        this.frame.classList.add.apply(this.frame.classList, classListArray);
+      }
+
       container.appendChild(this.frame);
       this.child = this.frame.contentWindow || this.frame.contentDocument.parentWindow;
       this.model = model || {};
